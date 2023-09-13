@@ -4,14 +4,14 @@
       <div class="flex w-full items-center">
         <div class="relative flex w-full pr-1">
           <input
-              type="email"
-              name="email" id="email"
+              type="text"
+              name="text" id="text"
               class="block w-full shadow-sm rounded-md border-0 py-1 pr-2 ring-1 ring-inset placeholder:text-dark-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
               placeholder="Do the dishes"
               :class="{'ring-indigo-300 focus:ring-indigo-300 text-dark-500': newTask.length >= 4  || !errorInput, 'ring-red-300 focus:ring-red-500 text-red-900': newTask.length < 4 && errorInput}"
               v-model="newTask"
               aria-invalid="true"
-              aria-describedby="email-error"
+              aria-describedby="text-error"
               @change="() => console.log(newTask)"
               @keydown.enter="addTask"
           />
@@ -31,7 +31,7 @@
         />
       </div>
     </div>
-    <p class="mt-1 text-sm text-red-600" :class="{'hidden': newTask.length >= 4 || !errorInput}" id="email-error">The task name has to be at least 4 characters long</p>
+    <p class="mt-1 text-sm text-red-600" :class="{'hidden': newTask.length >= 4 || !errorInput}" id="text-error">The task name has to be at least 4 characters long</p>
   </div>
 </template>
 
